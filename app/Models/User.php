@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role_id',
         'name',
         'email',
         'password',
@@ -33,6 +34,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
@@ -43,3 +49,5 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 }
+
+
