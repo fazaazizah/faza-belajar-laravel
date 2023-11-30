@@ -29,28 +29,43 @@
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" value="{{ old('name') }}" name="name" required>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" name="name">
+                            @error('name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="category" class="form-label">Category</label>
-                            <select class="form-selectr" aria-label="category" id="category" name="category">
+                            <select class="form-select @error('category') is-invalid @enderror" aria-label="category" id="category" name="category">
                                 <option selected disabled>- Choose Category -</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
                                 @endforeach
+                                @error('category')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <input type="text" class="form-control" id="description" value="{{ old('description') }}" name="description" required>
+                            <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" value="{{ old('description') }}" name="description">
+                            @error('description')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="price" value="{{ old('price') }}" name="price" required>
+                            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" value="{{ old('price') }}" name="price">
+                            @error('price')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Product Image</label>
-                            <input class="form-control" type="file" name="image" id="image" accept=".jpg, .jpeg, .png., .webp">
+                            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image">
+                            @error('image')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ route('product.index') }}" class="btn btn-secondary">Cancel</a>

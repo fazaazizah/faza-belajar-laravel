@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
@@ -20,6 +21,17 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|min:5',
+            'category' => 'required',
+            'description' => 'required|string|min:5',
+            'price' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
         $imageName = time() . '.' . $request->image->extension();
         Storage::putFileAs('public/product', $request->image, $imageName);
         $product = Product::create([
