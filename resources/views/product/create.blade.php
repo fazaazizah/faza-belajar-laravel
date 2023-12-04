@@ -54,6 +54,13 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="description" class="form-label">Stok Barang</label>
+                            <input type="text" class="form-control @error('stok_barang') is-invalid @enderror" id="stok_barang" value="{{ old('stok_barang') }}" name="stok_barang">
+                            @error('stok_barang')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
                             <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" value="{{ old('price') }}" name="price">
                             @error('price')

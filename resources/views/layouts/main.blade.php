@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('chart/code/css/highcharts.css') }}">
+  <link rel="stylesheet" href="{{ asset('chart/code/css/datagrid.css') }}">
+  
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -94,26 +97,36 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- jQuery -->
-<script src="{{ asset ('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset ('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
-<script src="{{ asset ('plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
-<script src="{{ asset ('plugins/jszip/jszip.min.js')}}"></script>
-<script src="{{ asset ('plugins/pdfmake/pdfmake.min.js')}}"></script>
-<script src="{{ asset ('plugins/pdfmake/vfs_fonts.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
-<script src="{{ asset ('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{ asset('plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{ asset('plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{ asset('chart/code/highcharts.js')}}"></script>
+<script src="{{ asset('chart/code/highcharts-3d.js')}}"></script>
+<script src="{{ asset('chart/code/highcharts-3d.js.map')}}"></script>
+<script src="{{ asset('chart/code/highcharts-3d.src.js')}}"></script>
+<script src="{{ asset('chart/code/highcharts-more.js')}}"></script>
+<script src="{{ asset('chart/code/highcharts-more.js.map')}}"></script>
+<script src="{{ asset('chart/code/highcharts-more.src.js')}}"></script>
+<script src="{{ asset('chart/code/highcharts.js.map')}}"></script>
+<script src="{{ asset('chart/code/highcharts.src.js')}}"></script>
+
 <!-- AdminLTE App -->
-<script src="{{ asset ('dist/js/adminlte.min.js')}}"></script>
+<script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset ('dist/js/demo.js')}}"></script>
+<script src="{{ asset('dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
@@ -132,5 +145,6 @@
     });
   });
 </script>
+@yield('script')
 </body>
 </html>

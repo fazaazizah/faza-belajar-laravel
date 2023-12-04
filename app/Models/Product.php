@@ -15,6 +15,7 @@ class Product extends Model
         'created_at',
         'updated_at',
         'description',
+        'stok_barang',
         'image',
         'price'
     ];

@@ -25,6 +25,7 @@ class ProductController extends Controller
             'name' => 'required|string|min:5',
             'category' => 'required',
             'description' => 'required|string|min:5',
+            'stok_barang' => 'required',
             'price' => 'required|integer',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
@@ -38,6 +39,7 @@ class ProductController extends Controller
             'product_name' => $request->name,
             'category_id' => $request->category,
             'description' => $request->description,
+            'stok_barang' => $request->stok_barang,
             'price' => $request->price,
             'image' => $imageName,
         ]);

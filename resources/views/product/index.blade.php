@@ -33,7 +33,8 @@
                         <th>No. </th>
                         <th>Product Name</th>
                         <th>Category ID</th>
-                        <th>Descriprion</th>
+                        <th>Description</th>
+                        <th>Stok Barang</th>
                         <th>Price</th>
                         <th>Gambar</th>
                         <th>Aksi</th>
@@ -46,6 +47,7 @@
                                     <td>{{ $product->product_name }}</td>
                                     <td>{{ $product->category->category_name }}</td>
                                     <td>{{ $product->description}}</td>
+                                    <td>{{ $product->stok_barang}}</td>
                                     <td>Rp. {{ number_format($product->price, 0, 2) }}</td>
                                     <td>
                                         @if ($product->image == null)
@@ -65,17 +67,6 @@
                                 </tr>
                             @endforeach
                     </tbody>
-                    <tfoot>
-                    <tr>
-                    <th>No. </th>
-                        <th>Product Name</th>
-                        <th>Category ID</th>
-                        <th>Descriprion</th>
-                        <th>Price</th>
-                        <th>Gambar</th>
-                        <th>Aksi</th>
-                    </tr>
-                    </tfoot>
                     </table>
                 </div>
               <!-- /.card-body -->
